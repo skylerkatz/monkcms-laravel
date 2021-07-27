@@ -13,7 +13,9 @@ abstract class Module
      */
     protected array $response;
 
-    final public function __construct(){}
+    final public function __construct()
+    {
+    }
 
     /**
      * @param array<string, mixed> $response

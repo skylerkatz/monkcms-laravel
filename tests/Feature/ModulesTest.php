@@ -16,10 +16,10 @@ it('sets the module dynamically', function () {
     expect((new Article())->debugQuery())->toBe(['module' => 'article', 'json' => true]);
 });
 
-it('can set a display type', function() {
+it('can set a display type', function () {
     expect(Sermon::display('list')->debugQuery())->toBe([
         'module' => 'sermon',
-        'display'=> 'list',
+        'display' => 'list',
         'json' => true,
     ]);
 });

@@ -10,13 +10,13 @@ use Monkdev\MonkCms\Exceptions\UnprocessableApiResponseException;
 
 it('can build a proper query string', function () {
     $expectedQueryString = http_build_query([
-        'SITEID'  => '54321',
+        'SITEID' => '54321',
         'CMSCODE' => 'EKK',
         'CMSTYPE' => 'CMS',
-        'NR'      => 3,
-        'arg0'    => 'sermon',
-        'arg1'    => 'display_:_list',
-        'arg2'    => 'json',
+        'NR' => 3,
+        'arg0' => 'sermon',
+        'arg1' => 'display_:_list',
+        'arg2' => 'json',
     ]);
 
     $queryBuilder = new QueryBuilder();
@@ -43,7 +43,7 @@ it('can generate a full api url', function () {
 
 it('can make a request using basic auth', function () {
     Http::fake([
-        '*' => Http::response('         1{"show":{"title":"Church of Monk"}}')
+        '*' => Http::response('         1{"show":{"title":"Church of Monk"}}'),
     ]);
 
     $queryBuilder = new QueryBuilder();
@@ -61,7 +61,6 @@ it('throws an authentication exception if the site id is missing', function () {
     $queryBuilder->module('sermon');
     $queryBuilder->display('list');
     invokeProtected($queryBuilder, 'makeRequest');
-
 })->throws(AuthenticationException::class);
 
 it('throws an authentication exception if the site secret is missing', function () {
@@ -71,12 +70,11 @@ it('throws an authentication exception if the site secret is missing', function 
     $queryBuilder->module('sermon');
     $queryBuilder->display('list');
     invokeProtected($queryBuilder, 'makeRequest');
-
 })->throws(AuthenticationException::class);
 
 it('throws an authentication exception if the site secret is incorrect', function () {
     Http::fake([
-        '*' => Http::response('', Response::HTTP_UNAUTHORIZED)
+        '*' => Http::response('', Response::HTTP_UNAUTHORIZED),
     ]);
 
     Config::set('monkcms.site_secret', 'incorrect-site-secret');
@@ -84,12 +82,11 @@ it('throws an authentication exception if the site secret is incorrect', functio
     $queryBuilder->module('sermon');
     $queryBuilder->display('list');
     invokeProtected($queryBuilder, 'makeRequest');
-
 })->throws(AuthenticationException::class);
 
 it('throws an exception if the site does not exist', function () {
     Http::fake([
-        '*' => Http::response('', Response::HTTP_NOT_FOUND)
+        '*' => Http::response('', Response::HTTP_NOT_FOUND),
     ]);
 
     Config::set('monkcms.site_id', 'not-a-real-site-id');
@@ -98,7 +95,6 @@ it('throws an exception if the site does not exist', function () {
     $queryBuilder->module('sermon');
     $queryBuilder->display('list');
     invokeProtected($queryBuilder, 'makeRequest');
-
 })->throws(
     SiteNotFoundException::class,
     'The site with an id of \'not-a-real-site-id\' does not exist'
@@ -106,7 +102,7 @@ it('throws an exception if the site does not exist', function () {
 
 it('can properly decode the json body', function () {
     Http::fake([
-        '*' => Http::response('         1{"show":{"title":"Church of Monk"}}')
+        '*' => Http::response('         1{"show":{"title":"Church of Monk"}}'),
     ]);
 
     $queryBuilder = new QueryBuilder();
@@ -119,7 +115,7 @@ it('can properly decode the json body', function () {
 
 it('throws an exception if the response is bad', function () {
     Http::fake([
-        '*' => Http::response('0')
+        '*' => Http::response('0'),
     ]);
 
     $queryBuilder = new QueryBuilder();

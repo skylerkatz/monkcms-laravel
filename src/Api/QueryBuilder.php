@@ -137,7 +137,7 @@ class QueryBuilder
                 return sprintf("%s_:_%s", $key, $value);
             })
             ->values()
-            ->mapWithKeys(fn($value, $key) => ["arg$key" => $value])
+            ->mapWithKeys(fn ($value, $key) => ["arg$key" => $value])
             ->toArray();
     }
 }
