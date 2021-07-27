@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Monkdev\MonkCms\Traits;
-
 
 use BadMethodCallException;
 use Monkdev\MonkCms\Api\QueryBuilder;
@@ -14,12 +12,22 @@ trait UsesGetContentQueryBuilder
 {
     protected ?QueryBuilder $queryBuilder = null;
 
-    public static function __callStatic(string $method, array $parameters)
+    /**
+     * @param string $method
+     * @param array<int, mixed> $parameters
+     * @return static
+     */
+    public static function __callStatic(string $method, array $parameters): static
     {
         return (new static)->$method(...$parameters);
     }
 
-    public function __call($method, $parameters)
+    /**
+     * @param string $method
+     * @param array<int, mixed> $parameters
+     * @return $this
+     */
+    public function __call(string $method, array $parameters): static
     {
         $builder = $this->getQueryBuilder();
 
@@ -52,6 +60,9 @@ trait UsesGetContentQueryBuilder
         return $this->queryBuilder;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function debugQuery(): array
     {
         return $this->getQueryBuilder()->buildQueryAsArray();

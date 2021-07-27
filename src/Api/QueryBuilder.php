@@ -40,6 +40,9 @@ class QueryBuilder
         return $this->display;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function buildQueryAsArray(): array
     {
         return array_filter([
@@ -70,10 +73,13 @@ class QueryBuilder
         );
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     protected function processResponse(string $response) : array
     {
         try {
-            return json_decode(substr($response, 10), JSON_OBJECT_AS_ARRAY, 512, JSON_THROW_ON_ERROR);
+            return json_decode(substr($response, 10), true, 512, JSON_THROW_ON_ERROR);
         } catch (JsonException) {
             throw new UnprocessableApiResponseException(
                 "The api response was unable to be processed: $response"
@@ -113,6 +119,9 @@ class QueryBuilder
         return $response->throw()->body();
     }
 
+    /**
+     * @return array<string, string>
+     */
     protected function formatQueryForApi(): array
     {
         return Collection::make($this->buildQueryAsArray())

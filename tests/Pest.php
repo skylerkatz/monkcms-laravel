@@ -41,11 +41,16 @@ uses(TestCase::class)->in('Feature', 'Unit');
 |
 */
 
-function invokeProtected(mixed $object, string $methodName, array $parameters = [])
+function invokeProtected(mixed $object, string $methodName, array $parameters = []): mixed
 {
-    $reflection = new \ReflectionClass(get_class($object));
-    $method = $reflection->getMethod($methodName);
-    $method->setAccessible(true);
+    try {
+        $reflection = new ReflectionClass(get_class($object));
+        $method = $reflection->getMethod($methodName);
+        $method->setAccessible(true);
 
-    return $method->invokeArgs($object, $parameters);
+        return $method->invokeArgs($object, $parameters);
+    } catch (ReflectionException $e) {
+    }
+
+    return $object->$methodName($parameters);
 }
