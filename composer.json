@@ -29,8 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Monkdev\\MonkCms\\": "src",
-            "Monkdev\\MonkCms\\Database\\Factories\\": "database/factories"
+            "Monkdev\\MonkCms\\": "src"
         }
     },
     "autoload-dev": {
@@ -39,9 +38,8 @@
         }
     },
     "scripts": {
-        "psalm": "vendor/bin/psalm",
-        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "phpstan": "vendor/bin/phpstan --memory-limit=2G",
+        "test": "./vendor/bin/testbench package:test --no-coverage"
     },
     "config": {
         "sort-packages": true
