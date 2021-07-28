@@ -15,5 +15,7 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::CATEGORY, 'love', 'find_category_%3A_love'],
     [Find::CATEGORIES, 'love,healing', 'find_category_%3A_love%2Chealing'],
+    [Find::CATEGORIES, 'love&&healing', 'find_category_%3A_love%26%26healing'],
+    [Find::CATEGORIES, 'love||healing', 'find_category_%3A_love%7C%7Chealing'],
     [Find::CATEGORIES, ['love', 'healing'], 'find_category_%3A_love%2Chealing'],
 ]);
