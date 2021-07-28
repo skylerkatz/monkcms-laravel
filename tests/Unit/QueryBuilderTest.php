@@ -55,7 +55,7 @@ it('can make a request using basic auth', function () {
 });
 
 it('throws an authentication exception if the site id is missing', function () {
-    Config::set('monkcms.site_id', null);
+    Config::set('monkcms.site_id', '');
 
     $queryBuilder = new QueryBuilder();
     $queryBuilder->module('sermon');
@@ -64,7 +64,7 @@ it('throws an authentication exception if the site id is missing', function () {
 })->throws(AuthenticationException::class);
 
 it('throws an authentication exception if the site secret is missing', function () {
-    Config::set('monkcms.site_secret', null);
+    Config::set('monkcms.site_secret', '');
 
     $queryBuilder = new QueryBuilder();
     $queryBuilder->module('sermon');
