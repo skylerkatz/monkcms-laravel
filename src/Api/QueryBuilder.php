@@ -16,9 +16,9 @@ class QueryBuilder
 {
     private ?string $display = null;
     /**
-     * @var string[]|null
+     * @var array<string, string>
      */
-    private ?array $finds = null;
+    private array $finds = [];
     private ?string $module = null;
 
     public function get(): static
@@ -28,10 +28,10 @@ class QueryBuilder
 
     /**
      * @param string|null $type
-     * @param string|array|null $value
-     * @return string[]|null
+     * @param string|string[] $value
+     * @return array<string, string>
      */
-    public function find(?string $type = null, string | array | null $value = null): ?array
+    public function find(?string $type = null, string | array $value = ''): array
     {
         if ($type) {
             $this->finds[$type] = is_array($value) ? implode(',', $value) : $value;
