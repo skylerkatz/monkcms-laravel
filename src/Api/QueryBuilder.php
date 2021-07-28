@@ -15,11 +15,29 @@ use Monkdev\MonkCms\Exceptions\UnprocessableApiResponseException;
 class QueryBuilder
 {
     private ?string $display = null;
+    /**
+     * @var string[]|null
+     */
+    private ?array $finds = null;
     private ?string $module = null;
 
     public function get(): static
     {
         return $this;
+    }
+
+    /**
+     * @param string|null $type
+     * @param string|null $value
+     * @return string[]|null
+     */
+    public function find(?string $type = null, ?string $value = null): ?array
+    {
+        if ($type) {
+            $this->finds[$type] = $value;
+        }
+
+        return $this->finds;
     }
 
     public function module(?string $module = null): ?string
@@ -45,11 +63,17 @@ class QueryBuilder
      */
     public function buildQueryAsArray(): array
     {
-        return array_filter([
+        $query = array_filter([
             'module' => $this->module(),
             'display' => $this->display(),
             'json' => true,
         ]);
+
+        foreach ($this->find() as $type => $value) {
+            $query[$type] = $value;
+        }
+
+        return $query;
     }
 
     protected function buildQueryString(): string
