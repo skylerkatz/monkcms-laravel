@@ -38,7 +38,7 @@
         }
     },
     "scripts": {
-        "phpstan": "vendor/bin/phpstan --memory-limit=2G",
+        "phpstan": "./vendor/bin/phpstan --configuration=phpstan.neon --memory-limit=2G",
         "test": "./vendor/bin/testbench package:test --no-coverage",
         "phpcs": "php-cs-fixer fix  --config=.php-cs-fixer.dist.php --allow-risky=yes"
     },
