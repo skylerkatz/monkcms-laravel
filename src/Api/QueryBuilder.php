@@ -28,13 +28,13 @@ class QueryBuilder
 
     /**
      * @param string|null $type
-     * @param string|null $value
+     * @param string|array|null $value
      * @return string[]|null
      */
-    public function find(?string $type = null, ?string $value = null): ?array
+    public function find(?string $type = null, string | array | null $value = null): ?array
     {
         if ($type) {
-            $this->finds[$type] = $value;
+            $this->finds[$type] = is_array($value) ? implode(',', $value) : $value;
         }
 
         return $this->finds;

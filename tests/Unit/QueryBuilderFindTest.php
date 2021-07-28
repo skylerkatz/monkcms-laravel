@@ -24,3 +24,36 @@ it('can find by site slug', function () {
 
     expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain('find_site_%3A_simple-site');
 });
+
+it('can find by a single category', function () {
+    $queryBuilder = new QueryBuilder();
+    $queryBuilder->find(Find::CATEGORY, 'love');
+
+    expect($queryBuilder->buildQueryAsArray())->toMatchArray([
+        'find_category' => 'love',
+    ]);
+
+    expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain('find_category_%3A_love');
+});
+
+it('can find by categories with categories as a string', function () {
+    $queryBuilder = new QueryBuilder();
+    $queryBuilder->find(Find::CATEGORIES, 'love,healing');
+
+    expect($queryBuilder->buildQueryAsArray())->toMatchArray([
+        'find_category' => 'love,healing',
+    ]);
+
+    expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain('find_category_%3A_love%2Chealing');
+});
+
+it('can find by categories with categories as an array', function () {
+    $queryBuilder = new QueryBuilder();
+    $queryBuilder->find(Find::CATEGORIES, ['love', 'healing']);
+
+    expect($queryBuilder->buildQueryAsArray())->toMatchArray([
+        'find_category' => 'love,healing',
+    ]);
+
+    expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain('find_category_%3A_love%2Chealing');
+});
