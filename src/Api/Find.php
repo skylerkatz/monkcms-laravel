@@ -11,6 +11,9 @@ class Find
     public const CATEGORY = 'find_category';
     public const CATEGORIES = 'find_category';
 
+    public const PARENT_CATEGORY = 'find_parent_category';
+    public const PARENT_CATEGORIES = 'find_parent_category';
+
     public const GROUP = 'find_group';
     public const GROUPS = 'find_group';
 

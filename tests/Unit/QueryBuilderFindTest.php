@@ -19,6 +19,12 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::CATEGORIES, 'love||healing', 'find_category_%3A_love%7C%7Chealing'],
     [Find::CATEGORIES, ['love', 'healing'], 'find_category_%3A_love%2Chealing'],
 
+    [Find::PARENT_CATEGORY, 'fruits-of-the-spirit', 'find_parent_category_%3A_fruits-of-the-spirit'],
+    [Find::PARENT_CATEGORIES, 'fruits-of-the-spirit,special-events', 'find_parent_category_%3A_fruits-of-the-spirit%2Cspecial-events'],
+    [Find::PARENT_CATEGORIES, 'fruits-of-the-spirit&&special-events', 'find_parent_category_%3A_fruits-of-the-spirit%26%26special-events'],
+    [Find::PARENT_CATEGORIES, 'fruits-of-the-spirit||special-events', 'find_parent_category_%3A_fruits-of-the-spirit%7C%7Cspecial-events'],
+    [Find::PARENT_CATEGORIES, ['fruits-of-the-spirit', 'special-events'], 'find_parent_category_%3A_fruits-of-the-spirit%2Cspecial-events'],
+
     [Find::GROUP, 'parents', 'find_group_%3A_parents'],
     [Find::GROUPS, 'parents,singles', 'find_group_%3A_parents%2Csingles'],
     [Find::GROUPS, 'parents&&singles', 'find_group_%3A_parents%26%26singles'],
