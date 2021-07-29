@@ -4,6 +4,7 @@ namespace Monkdev\MonkCms\Api;
 
 use Throwable;
 use JsonException;
+use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Config;
@@ -33,9 +34,17 @@ class QueryBuilder
      */
     public function find(?string $type = null, string | array $value = ''): array
     {
-        if ($type) {
-            $this->finds[$type] = is_array($value) ? implode(',', $value) : $value;
+        $values = is_string($value) ? explode(',', $value) : $value;
+
+        if (! $type) {
+            return $this->finds;
         }
+
+        if (in_array($type, [Find::TAG, Find::TAGS], true)) {
+            $values = array_map(fn ($value) => Str::slug($value), $values);
+        }
+
+        $this->finds[$type] = implode(',', $values);
 
         return $this->finds;
     }

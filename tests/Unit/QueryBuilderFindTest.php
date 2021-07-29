@@ -43,4 +43,8 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::BIBLE_PASSAGE, 'Romans', 'find_passage_%3A_Romans'],
     [Find::BIBLE_PASSAGE, '1-Corinthians', 'find_passage_%3A_1-Corinthians'],
     [Find::BIBLE_PASSAGE, '1 Corinthians 5:1-6:13', 'find_passage_%3A_1+Corinthians+5%3A1-6%3A13'],
+
+    [Find::TAG, 'jesus', 'find_tag_%3A_jesus'],
+    [Find::TAG, 'Love your neighbor!', 'find_tag_%3A_love-your-neighbor'],
+    [Find::TAGS, 'Special Events, United Methodist Church', 'find_tag_%3A_special-events%2Cunited-methodist-church'],
 ]);
