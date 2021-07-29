@@ -23,4 +23,6 @@ class Find
 
     public const PREACHER = 'find_preacher';
     public const PREACHERS = 'find_preacher';
+
+    public const BIBLE_PASSAGE = 'find_passage';
 }

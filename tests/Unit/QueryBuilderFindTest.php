@@ -38,4 +38,8 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::PREACHER, 'frank-de-monk', 'find_preacher_%3A_frank-de-monk'],
     [Find::PREACHERS, 'frank-de-monk,monkbot', 'find_preacher_%3A_frank-de-monk%2Cmonkbot'],
+
+    [Find::BIBLE_PASSAGE, 'Romans', 'find_passage_%3A_Romans'],
+    [Find::BIBLE_PASSAGE, '1-Corinthians', 'find_passage_%3A_1-Corinthians'],
+    [Find::BIBLE_PASSAGE, '1 Corinthians 5:1-6:13', 'find_passage_%3A_1+Corinthians+5%3A1-6%3A13'],
 ]);
