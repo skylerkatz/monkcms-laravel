@@ -9,7 +9,8 @@ it('finds by types with values', function ($type, $value, $result) {
 
     expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain($result);
 })->with([
-    [Find::BY_ID, '1', 'find_%3A_1'],
+    [Find::BASIC, '1', 'find_%3A_1'],
+    [Find::BY_ID, '1', 'find_id_%3A_1'],
 
     [Find::BY_SITE_SLUG, 'simple-site', 'find_site_%3A_simple-site'],
 
