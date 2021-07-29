@@ -20,4 +20,7 @@ class Find
     public const SERIES = 'find_series';
 
     public const YEAR = 'find_year';
+
+    public const PREACHER = 'find_preacher';
+    public const PREACHERS = 'find_preacher';
 }

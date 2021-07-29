@@ -35,4 +35,7 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::SERIES, 'current||special-guests', 'find_series_%3A_current%7C%7Cspecial-guests'],
 
     [Find::YEAR, '2020', 'find_year_%3A_2020'],
+
+    [Find::PREACHER, 'frank-de-monk', 'find_preacher_%3A_frank-de-monk'],
+    [Find::PREACHERS, 'frank-de-monk,monkbot', 'find_preacher_%3A_frank-de-monk%2Cmonkbot'],
 ]);
