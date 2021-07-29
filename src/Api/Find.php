@@ -15,4 +15,6 @@ class Find
     public const GROUPS = 'find_group';
 
     public const SERIES = 'find_series';
+
+    public const YEAR = 'find_year';
 }
