@@ -23,4 +23,8 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::GROUPS, 'parents,singles', 'find_group_%3A_parents%2Csingles'],
     [Find::GROUPS, 'parents&&singles', 'find_group_%3A_parents%26%26singles'],
     [Find::GROUPS, 'parents||singles', 'find_group_%3A_parents%7C%7Csingles'],
+
+    [Find::SERIES, 'current,special-guests', 'find_series_%3A_current%2Cspecial-guests'],
+    [Find::SERIES, 'current&&special-guests', 'find_series_%3A_current%26%26special-guests'],
+    [Find::SERIES, 'current||special-guests', 'find_series_%3A_current%7C%7Cspecial-guests'],
 ]);

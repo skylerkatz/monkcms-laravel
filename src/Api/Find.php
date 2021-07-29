@@ -13,4 +13,6 @@ class Find
 
     public const GROUP = 'find_group';
     public const GROUPS = 'find_group';
+
+    public const SERIES = 'find_series';
 }
