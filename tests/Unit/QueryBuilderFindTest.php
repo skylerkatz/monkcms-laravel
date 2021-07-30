@@ -53,4 +53,7 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::TAG, 'jesus', 'find_tag_%3A_jesus'],
     [Find::TAG, 'Love your neighbor!', 'find_tag_%3A_love-your-neighbor'],
     [Find::TAGS, 'Special Events, United Methodist Church', 'find_tag_%3A_special-events%2Cunited-methodist-church'],
+
+    [Find::BOOK_LIST, 'Recommended Reading!', 'find_booklist_%3A_recommended-reading'],
+    [Find::BOOK_LIST, 'recommended-reading', 'find_booklist_%3A_recommended-reading'],
 ]);
