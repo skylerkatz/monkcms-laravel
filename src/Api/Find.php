@@ -32,4 +32,20 @@ class Find
 
     public const TAG = 'find_tag';
     public const TAGS = 'find_tag';
+    /**
+     * Find params that need to have slugged params.
+     *
+     * @return string[]
+     */
+    public static function sluggableFinds(): array
+    {
+        return [
+            self::AUTHOR,
+            self::AUTHORS,
+            self::PREACHERS,
+            self::TAG,
+            self::TAGS,
+            self::BY_SITE_SLUG,
+        ];
+    }
 }

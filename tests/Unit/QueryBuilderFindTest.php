@@ -13,6 +13,7 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::BY_ID, '1', 'find_id_%3A_1'],
 
     [Find::BY_SITE_SLUG, 'simple-site', 'find_site_%3A_simple-site'],
+    [Find::BY_SITE_SLUG, 'Simple Site', 'find_site_%3A_simple-site'],
 
     [Find::CATEGORY, 'love', 'find_category_%3A_love'],
     [Find::CATEGORIES, 'love,healing', 'find_category_%3A_love%2Chealing'],
@@ -39,8 +40,10 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::MONTH, '11-2020', 'find_month_%3A_11-2020'],
 
     [Find::AUTHOR, 'frank-de-monk', 'find_author_%3A_frank-de-monk'],
+    [Find::AUTHOR, 'Frank De Monk', 'find_author_%3A_frank-de-monk'],
     [Find::AUTHORS, 'frank-de-monk,monkbot', 'find_author_%3A_frank-de-monk%2Cmonkbot'],
     [Find::PREACHER, 'frank-de-monk', 'find_preacher_%3A_frank-de-monk'],
+    [Find::PREACHER, 'Frank De Monk', 'find_preacher_%3A_frank-de-monk'],
     [Find::PREACHERS, 'frank-de-monk,monkbot', 'find_preacher_%3A_frank-de-monk%2Cmonkbot'],
 
     [Find::BIBLE_PASSAGE, 'Romans', 'find_passage_%3A_Romans'],

@@ -40,7 +40,7 @@ class QueryBuilder
             return $this->finds;
         }
 
-        if (in_array($type, [Find::TAG, Find::TAGS], true)) {
+        if ($this->shouldBeSluggified($type)) {
             $values = array_map(fn ($value) => Str::slug($value), $values);
         }
 
@@ -172,5 +172,10 @@ class QueryBuilder
             ->values()
             ->mapWithKeys(fn ($value, $key) => ["arg$key" => $value])
             ->toArray();
+    }
+
+    protected function shouldBeSluggified(string $type): bool
+    {
+        return in_array($type, Find::sluggableFinds(), true);
     }
 }
