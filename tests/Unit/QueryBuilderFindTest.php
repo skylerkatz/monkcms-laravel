@@ -11,6 +11,7 @@ it('finds by types with values', function ($type, $value, $result) {
 })->with([
     [Find::BASIC, '1', 'find_%3A_1'],
     [Find::BY_ID, '1', 'find_id_%3A_1'],
+    [Find::BY_SLUG, 'about-us', 'find_%3A_about-us'],
 
     [Find::BY_SITE_SLUG, 'simple-site', 'find_site_%3A_simple-site'],
     [Find::BY_SITE_SLUG, 'Simple Site', 'find_site_%3A_simple-site'],

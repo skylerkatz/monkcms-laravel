@@ -6,6 +6,7 @@ class Find
 {
     public const BASIC = 'find';
     public const BY_ID = 'find_id';
+    public const BY_SLUG = 'find';
 
     public const BY_SITE_SLUG = 'find_site';
 
