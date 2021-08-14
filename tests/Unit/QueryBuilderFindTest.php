@@ -57,4 +57,7 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::BOOK_LIST, 'Recommended Reading!', 'find_booklist_%3A_recommended-reading'],
     [Find::BOOK_LIST, 'recommended-reading', 'find_booklist_%3A_recommended-reading'],
+
+    [Find::BOOK, "Oh the Places You'll Go", 'find_book_%3A_oh-the-places-youll-go'],
+    [Find::BOOK, "oh-the-places-youll-go", 'find_book_%3A_oh-the-places-youll-go'],
 ]);

@@ -34,6 +34,8 @@ class Find
     public const TAG = 'find_tag';
     public const TAGS = 'find_tag';
 
+    public const BOOK = 'find_book';
+
     public const BOOK_LIST = 'find_booklist';
 
     /**
@@ -49,6 +51,7 @@ class Find
             self::PREACHERS,
             self::TAG,
             self::TAGS,
+            self::BOOK,
             self::BOOK_LIST,
             self::BY_SITE_SLUG,
         ];
