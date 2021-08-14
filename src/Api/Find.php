@@ -45,6 +45,8 @@ class Find
     public const GEOGRAPHICAL_LOCATION_BY_STATE = 'find_state';
     public const JOB_LOCATION = 'find_job_location';
 
+    public const JOB_ORG = 'find_org';
+
     public const CHURCH_PASTOR = 'find_pastor';
 
     public const NEAR_ANOTHER_EVENT = 'find_near';
