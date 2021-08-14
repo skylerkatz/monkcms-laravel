@@ -41,6 +41,8 @@ class Find
 
     public const LOCATION = 'find_location';
 
+    public const CHURCH_PASTOR = 'find_pastor';
+
     /**
      * Find params that need to have slugged params.
      *
