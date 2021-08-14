@@ -160,8 +160,8 @@ class QueryBuilder
         return Collection::make($this->buildQueryAsArray())
             ->map(function ($value, $key) {
                 $key = Str::replace(
-                    Find::BOOK_AUTHOR,
-                    Find::AUTHOR,
+                    [Find::BOOK_AUTHOR, Find::GEOGRAPHICAL_LOCATION],
+                    [Find::AUTHOR, Find::LOCATION],
                     $key
                 );
 

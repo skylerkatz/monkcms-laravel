@@ -40,6 +40,7 @@ class Find
     public const BOOK_LIST = 'find_booklist';
 
     public const LOCATION = 'find_location';
+    public const GEOGRAPHICAL_LOCATION = 'find_geographical_location';
 
     public const CHURCH_PASTOR = 'find_pastor';
 

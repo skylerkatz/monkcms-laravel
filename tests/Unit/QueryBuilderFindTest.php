@@ -65,5 +65,9 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::LOCATION, 'The Sanctuary', 'find_location_%3A_the-sanctuary'],
     [Find::LOCATION, 'the-sanctuary', 'find_location_%3A_the-sanctuary'],
 
+    [Find::GEOGRAPHICAL_LOCATION, 'Saint Louis', 'find_location_%3A_Saint+Louis'],
+    [Find::GEOGRAPHICAL_LOCATION, '63104', 'find_location_%3A_63104'],
+    [Find::GEOGRAPHICAL_LOCATION, 'US|MO|Saint Louis', 'find_location_%3A_US%7CMO%7CSaint+Louis'],
+
     [Find::CHURCH_PASTOR, 'Frank De Monk', 'find_pastor_%3A_Frank+De+Monk'],
 ]);
