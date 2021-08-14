@@ -53,6 +53,10 @@ class Find
 
     public const GALLERY = 'find_gallery';
 
+    public const ME_PAGE_MEMBER_ID = 'findid';
+
+    public const MEMBER_USER_NAME = 'find';
+
     /**
      * Find params that need to have slugged params.
      *

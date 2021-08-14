@@ -86,4 +86,7 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::GALLERY, 'Baptism Sunday', 'find_gallery_%3A_baptism-sunday'],
     [Find::GALLERY, 'baptism-sunday', 'find_gallery_%3A_baptism-sunday'],
+
+    [Find::ME_PAGE_MEMBER_ID, '1234', 'findid_%3A_1234'],
+    [Find::MEMBER_USER_NAME, 'fmonk04', 'find_%3A_fmonk04'],
 ]);
