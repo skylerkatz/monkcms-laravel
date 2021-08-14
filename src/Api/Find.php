@@ -25,6 +25,7 @@ class Find
 
     public const AUTHOR = 'find_author';
     public const AUTHORS = 'find_author';
+    public const BOOK_AUTHOR = 'find_book_author';
     public const PREACHER = 'find_preacher';
     public const PREACHERS = 'find_preacher';
 
