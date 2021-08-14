@@ -38,6 +38,8 @@ class Find
 
     public const BOOK_LIST = 'find_booklist';
 
+    public const LOCATION = 'find_location';
+
     /**
      * Find params that need to have slugged params.
      *
@@ -54,6 +56,7 @@ class Find
             self::BOOK,
             self::BOOK_LIST,
             self::BY_SITE_SLUG,
+            self::LOCATION,
         ];
     }
 }

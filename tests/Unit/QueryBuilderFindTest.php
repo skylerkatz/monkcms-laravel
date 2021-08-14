@@ -60,4 +60,7 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::BOOK, "Oh the Places You'll Go", 'find_book_%3A_oh-the-places-youll-go'],
     [Find::BOOK, "oh-the-places-youll-go", 'find_book_%3A_oh-the-places-youll-go'],
+
+    [Find::LOCATION, 'The Sanctuary', 'find_location_%3A_the-sanctuary'],
+    [Find::LOCATION, 'the-sanctuary', 'find_location_%3A_the-sanctuary'],
 ]);
