@@ -41,8 +41,11 @@ class Find
 
     public const LOCATION = 'find_location';
     public const GEOGRAPHICAL_LOCATION = 'find_geographical_location';
+    public const GEOGRAPHICAL_LOCATION_BY_STATE = 'find_state';
 
     public const CHURCH_PASTOR = 'find_pastor';
+
+    public const NEAR_ANOTHER_EVENT = 'find_near';
 
     /**
      * Find params that need to have slugged params.
@@ -61,6 +64,7 @@ class Find
             self::BOOK_LIST,
             self::BY_SITE_SLUG,
             self::LOCATION,
+            self::NEAR_ANOTHER_EVENT,
         ];
     }
 }
