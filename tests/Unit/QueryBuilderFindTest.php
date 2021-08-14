@@ -71,6 +71,9 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::GEOGRAPHICAL_LOCATION_BY_STATE, 'MO', 'find_state_%3A_MO'],
 
+    [Find::JOB_LOCATION, 'Ministry Brands', 'find_location_%3A_Ministry+Brands'],
+    [Find::JOB_LOCATION, 'ministry-brands', 'find_location_%3A_ministry-brands'],
+
     [Find::NEAR_ANOTHER_EVENT, 'Meet The Pastor', 'find_near_%3A_meet-the-pastor'],
     [Find::NEAR_ANOTHER_EVENT, 'meet-the-pastor', 'find_near_%3A_meet-the-pastor'],
 
