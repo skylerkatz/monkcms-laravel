@@ -23,6 +23,7 @@ class Find
 
     public const YEAR = 'find_year';
     public const MONTH = 'find_month';
+    public const DAY = 'find_day';
 
     public const AUTHOR = 'find_author';
     public const AUTHORS = 'find_author';

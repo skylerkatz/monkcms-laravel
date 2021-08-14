@@ -39,6 +39,8 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::YEAR, '2020', 'find_year_%3A_2020'],
     [Find::MONTH, '11-2020', 'find_month_%3A_11-2020'],
+    [Find::DAY, '2020-11-05', 'find_day_%3A_2020-11-05'],
+    [Find::DAY, 'Monday', 'find_day_%3A_Monday'],
 
     [Find::AUTHOR, 'frank-de-monk', 'find_author_%3A_frank-de-monk'],
     [Find::AUTHOR, 'Frank De Monk', 'find_author_%3A_frank-de-monk'],
