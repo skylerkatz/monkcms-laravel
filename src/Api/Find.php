@@ -47,6 +47,8 @@ class Find
 
     public const NEAR_ANOTHER_EVENT = 'find_near';
 
+    public const GALLERY = 'find_gallery';
+
     /**
      * Find params that need to have slugged params.
      *
@@ -65,6 +67,7 @@ class Find
             self::BY_SITE_SLUG,
             self::LOCATION,
             self::NEAR_ANOTHER_EVENT,
+            self::GALLERY,
         ];
     }
 }

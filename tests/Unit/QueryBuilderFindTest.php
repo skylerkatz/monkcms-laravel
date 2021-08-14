@@ -75,4 +75,7 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::NEAR_ANOTHER_EVENT, 'meet-the-pastor', 'find_near_%3A_meet-the-pastor'],
 
     [Find::CHURCH_PASTOR, 'Frank De Monk', 'find_pastor_%3A_Frank+De+Monk'],
+
+    [Find::GALLERY, 'Baptism Sunday', 'find_gallery_%3A_baptism-sunday'],
+    [Find::GALLERY, 'baptism-sunday', 'find_gallery_%3A_baptism-sunday'],
 ]);
