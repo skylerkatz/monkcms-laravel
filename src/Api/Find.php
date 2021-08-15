@@ -19,6 +19,8 @@ class Find
     public const GROUP = 'find_group';
     public const GROUPS = 'find_group';
 
+    public const GROUP_SERIES = 'find_group_series';
+
     public const SERIES = 'find_series';
 
     public const YEAR = 'find_year';
@@ -76,6 +78,7 @@ class Find
             self::LOCATION,
             self::NEAR_ANOTHER_EVENT,
             self::GALLERY,
+            self::GROUP_SERIES,
         ];
     }
 }
