@@ -92,4 +92,12 @@ it('finds by types with values', function ($type, $value, $result) {
 
     [Find::ME_PAGE_MEMBER_ID, '1234', 'findid_%3A_1234'],
     [Find::MEMBER_USER_NAME, 'fmonk04', 'find_%3A_fmonk04'],
+
+    [Find::PERFORMANCE, '12345', 'find_performance_%3A_12345'],
+    [Find::SONG, 'Amazing Grace', 'find_song_%3A_amazing-grace'],
+    [Find::SONG, 'amazing-grace', 'find_song_%3A_amazing-grace'],
+    [Find::COMPOSER, 'Roxanna Panufnik', 'find_composer_%3A_roxanna-panufnik'],
+    [Find::COMPOSER, 'roxanna-panufnik', 'find_composer_%3A_roxanna-panufnik'],
+    [Find::PERFORMER, 'James Cleveland', 'find_performer_%3A_james-cleveland'],
+    [Find::PERFORMER, 'james-cleveland', 'find_performer_%3A_james-cleveland'],
 ]);

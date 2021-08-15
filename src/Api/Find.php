@@ -59,6 +59,11 @@ class Find
 
     public const MEMBER_USER_NAME = 'find';
 
+    public const PERFORMANCE = 'find_performance';
+    public const SONG = 'find_song';
+    public const COMPOSER = 'find_composer';
+    public const PERFORMER = 'find_performer';
+
     /**
      * Find params that need to have slugged params.
      *
@@ -79,6 +84,9 @@ class Find
             self::NEAR_ANOTHER_EVENT,
             self::GALLERY,
             self::GROUP_SERIES,
+            self::SONG,
+            self::COMPOSER,
+            self::PERFORMER,
         ];
     }
 }
