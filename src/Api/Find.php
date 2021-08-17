@@ -64,6 +64,8 @@ class Find
     public const COMPOSER = 'find_composer';
     public const PERFORMER = 'find_performer';
 
+    public const SKU_TYPE = 'find_skutype';
+
     /**
      * Find params that need to have slugged params.
      *
@@ -87,6 +89,7 @@ class Find
             self::SONG,
             self::COMPOSER,
             self::PERFORMER,
+            self::SKU_TYPE,
         ];
     }
 }

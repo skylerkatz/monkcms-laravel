@@ -100,4 +100,8 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::COMPOSER, 'roxanna-panufnik', 'find_composer_%3A_roxanna-panufnik'],
     [Find::PERFORMER, 'James Cleveland', 'find_performer_%3A_james-cleveland'],
     [Find::PERFORMER, 'james-cleveland', 'find_performer_%3A_james-cleveland'],
+
+    [Find::SKU_TYPE, 'Camp Clothes', 'find_skutype_%3A_camp-clothes'],
+    [Find::SKU_TYPE, 'camp-clothes', 'find_skutype_%3A_camp-clothes'],
+
 ]);
