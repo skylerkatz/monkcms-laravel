@@ -1,8 +1,8 @@
 # This is my package MonkCms
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/monkdev/monkcms-laravel.svg?style=flat-square)](https://packagist.org/packages/monkdev/monkcms-laravel)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/monkdev/monkcms-laravel/run-tests?label=tests)](https://github.com/monkdev/monkcms-laravel/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/monkdev/monkcms-laravel/Check%20&%20fix%20styling?label=code%20style)](https://github.com/monkdev/monkcms-laravel/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/monkdev/monkcms-laravel/run-tests?label=tests)](https://github.com/skylerkatz/monkcms-laravel/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/skylerkatz/monkcms-laravel/Check%20&%20fix%20styling?label=code%20style)](https://github.com/monkdev/monkcms-laravel/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/monkdev/monkcms-laravel.svg?style=flat-square)](https://packagist.org/packages/monkdev/monkcms-laravel)
 
 
