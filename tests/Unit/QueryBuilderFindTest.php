@@ -105,4 +105,9 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::SKU_TYPE, 'camp-clothes', 'find_skutype_%3A_camp-clothes'],
     [Find::SIMILAR_PRODUCTS, 'Camp Clothes', 'find_similar_%3A_camp-clothes'],
     [Find::SIMILAR_PRODUCTS, 'camp-clothes', 'find_similar_%3A_camp-clothes'],
+
+    [Find::MODULE, 'Sermons', 'find_module_%3A_sermons'],
+    [Find::MODULE, 'sermons', 'find_module_%3A_sermons'],
+    [Find::MODULE, 'Sermons, Events', 'find_module_%3A_sermons%2Cevents'],
+    [Find::MODULE, 'sermons,events', 'find_module_%3A_sermons%2Cevents'],
 ]);
