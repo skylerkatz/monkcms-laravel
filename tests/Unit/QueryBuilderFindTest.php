@@ -115,4 +115,10 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::FREQUENCY, 'weekly', 'find_frequency_%3A_weekly'],
     [Find::FREQUENCY, 'Weekly, Bi Weekly', 'find_frequency_%3A_weekly%2Cbi-weekly'],
     [Find::FREQUENCY, 'weekly,bi-weekly', 'find_frequency_%3A_weekly%2Cbi-weekly'],
+
+    [Find::FACEBOOK_PAGE_ID, '101090861674291', 'find_page_id_%3A_101090861674291'],
+    [Find::FACEBOOK_POST_ID, '101090861674291_101098335006877', 'find_post_id_%3A_101090861674291_101098335006877'],
+
+    [Find::INSTAGRAM_ACCOUNT_ID, '101090861674291', 'find_account_id_%3A_101090861674291'],
+    [Find::INSTAGRAM_MEDIA_ID, '57863548765', 'find_media_id_%3A_57863548765'],
 ]);

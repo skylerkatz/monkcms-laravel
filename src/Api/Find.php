@@ -71,6 +71,12 @@ class Find
 
     public const FREQUENCY = 'find_frequency';
 
+    public const FACEBOOK_PAGE_ID = 'find_page_id';
+    public const FACEBOOK_POST_ID = 'find_post_id';
+
+    public const INSTAGRAM_ACCOUNT_ID = 'find_account_id';
+    public const INSTAGRAM_MEDIA_ID = 'find_media_id';
+
     /**
      * Find params that need to have slugged params.
      *
