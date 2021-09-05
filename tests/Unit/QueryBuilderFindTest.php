@@ -1,6 +1,5 @@
 <?php
 
-use Monkdev\MonkCms\Api\Find;
 use Monkdev\MonkCms\Api\QueryBuilder;
 
 it('finds by types with values', function ($type, $value, $result) {
