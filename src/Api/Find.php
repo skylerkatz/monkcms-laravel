@@ -69,6 +69,8 @@ class Find
 
     public const MODULE = 'find_module';
 
+    public const FREQUENCY = 'find_frequency';
+
     /**
      * Find params that need to have slugged params.
      *
@@ -95,6 +97,7 @@ class Find
             self::SKU_TYPE,
             self::SIMILAR_PRODUCTS,
             self::MODULE,
+            self::FREQUENCY,
         ];
     }
 }

@@ -110,4 +110,9 @@ it('finds by types with values', function ($type, $value, $result) {
     [Find::MODULE, 'sermons', 'find_module_%3A_sermons'],
     [Find::MODULE, 'Sermons, Events', 'find_module_%3A_sermons%2Cevents'],
     [Find::MODULE, 'sermons,events', 'find_module_%3A_sermons%2Cevents'],
+
+    [Find::FREQUENCY, 'Weekly', 'find_frequency_%3A_weekly'],
+    [Find::FREQUENCY, 'weekly', 'find_frequency_%3A_weekly'],
+    [Find::FREQUENCY, 'Weekly, Bi Weekly', 'find_frequency_%3A_weekly%2Cbi-weekly'],
+    [Find::FREQUENCY, 'weekly,bi-weekly', 'find_frequency_%3A_weekly%2Cbi-weekly'],
 ]);
