@@ -9,7 +9,7 @@ abstract class Module
     use UsesGetContentQueryBuilder;
 
     /**
-     * @var array<string, mixed>
+     * @var array<string, string>
      */
     protected array $response;
 
@@ -18,7 +18,7 @@ abstract class Module
     }
 
     /**
-     * @param array<string, mixed> $response
+     * @param array<string, string> $response
      * @return static
      */
     protected static function fromResponse(array $response) :static
@@ -30,7 +30,7 @@ abstract class Module
     }
 
     /**
-     * @param array<string, mixed> $response
+     * @param array<string, string> $response
      * @return $this
      */
     protected function setResponse(array $response): static

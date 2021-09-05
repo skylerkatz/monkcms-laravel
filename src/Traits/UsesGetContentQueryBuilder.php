@@ -13,8 +13,10 @@ trait UsesGetContentQueryBuilder
     protected ?QueryBuilder $queryBuilder = null;
 
     /**
+     * @template TValue
+     *
      * @param string $method
-     * @param array<int, mixed> $parameters
+     * @param array<int, TValue> $parameters
      * @return static
      */
     public static function __callStatic(string $method, array $parameters): static
@@ -23,8 +25,10 @@ trait UsesGetContentQueryBuilder
     }
 
     /**
+     * @template TValue
+     *
      * @param string $method
-     * @param array<int, mixed> $parameters
+     * @param array<int, TValue> $parameters
      * @return $this
      */
     public function __call(string $method, array $parameters): static
@@ -61,7 +65,7 @@ trait UsesGetContentQueryBuilder
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, string|bool>
      */
     public function debugQuery(): array
     {

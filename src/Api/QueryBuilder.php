@@ -20,6 +20,7 @@ class QueryBuilder
      * @var array<string, string>
      */
     private array $finds = [];
+
     private ?string $module = null;
 
     public function get(): static
@@ -29,7 +30,7 @@ class QueryBuilder
 
     /**
      * @param string|null $type
-     * @param string|string[] $value
+     * @param string|array<int, string> $value
      * @return array<string, string>
      */
     public function find(?string $type = null, string | array $value = ''): array
@@ -68,7 +69,7 @@ class QueryBuilder
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, string|bool>
      */
     public function buildQueryAsArray(): array
     {
@@ -107,7 +108,7 @@ class QueryBuilder
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, string>
      */
     protected function processResponse(string $response) : array
     {

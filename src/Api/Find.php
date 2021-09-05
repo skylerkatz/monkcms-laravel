@@ -69,7 +69,7 @@ class Find
     /**
      * Find params that need to have slugged params.
      *
-     * @return string[]
+     * @return array<int, string>
      */
     public static function sluggableFinds(): array
     {
