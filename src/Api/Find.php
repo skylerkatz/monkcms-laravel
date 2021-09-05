@@ -65,6 +65,7 @@ class Find
     public const PERFORMER = 'find_performer';
 
     public const SKU_TYPE = 'find_skutype';
+    public const SIMILAR_PRODUCTS = 'find_similar';
 
     /**
      * Find params that need to have slugged params.
@@ -90,6 +91,7 @@ class Find
             self::COMPOSER,
             self::PERFORMER,
             self::SKU_TYPE,
+            self::SIMILAR_PRODUCTS,
         ];
     }
 }
