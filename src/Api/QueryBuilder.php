@@ -76,6 +76,7 @@ class QueryBuilder
 
         return $this->hides;
     }
+
     public function module(?string $module = null): ?string
     {
         if ($module) {
