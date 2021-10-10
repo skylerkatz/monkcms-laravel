@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Monkdev\MonkCms\Api\Find;
 
 dataset('finds', function () {

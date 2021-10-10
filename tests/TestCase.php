@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Monkdev\MonkCms\Tests;
 
 use Monkdev\MonkCms\MonkCmsServiceProvider;

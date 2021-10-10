@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /** @noinspection PhpUnhandledExceptionInspection */
 
 use Illuminate\Support\Facades\Http;
