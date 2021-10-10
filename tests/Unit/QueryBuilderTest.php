@@ -127,3 +127,17 @@ it('throws an exception if the response is bad', function () {
     UnprocessableApiResponseException::class,
     'The api response was unable to be processed: 0'
 );
+
+it('finds by types with values', function ($type, $value, $result) {
+    $queryBuilder = new QueryBuilder();
+    $queryBuilder->find($type, $value);
+
+    expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain($result);
+})->with('finds');
+
+it('hides by types with values', function ($type, $value, $result) {
+    $queryBuilder = new QueryBuilder();
+    $queryBuilder->hide($type, $value);
+
+    expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain($result);
+})->with('hides');
