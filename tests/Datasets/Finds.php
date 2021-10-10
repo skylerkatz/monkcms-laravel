@@ -110,6 +110,13 @@ dataset('finds', function () {
     yield [Find::FREQUENCY, 'Weekly, Bi Weekly', 'find_frequency_%3A_weekly%2Cbi-weekly'];
     yield [Find::FREQUENCY, 'weekly,bi-weekly', 'find_frequency_%3A_weekly%2Cbi-weekly'];
 
+    yield [Find::SMALL_GROUP_STATUS, 'open', 'find_status_%3A_open'];
+    yield [Find::SMALL_GROUP_STATUS, 'Open', 'find_status_%3A_open'];
+    yield [Find::SMALL_GROUP_STATUS, 'closed', 'find_status_%3A_closed'];
+    yield [Find::SMALL_GROUP_STATUS, 'Closed', 'find_status_%3A_closed'];
+    yield [Find::SMALL_GROUP_STATUS, 'full', 'find_status_%3A_full'];
+    yield [Find::SMALL_GROUP_STATUS, 'Full', 'find_status_%3A_full'];
+
     yield [Find::FACEBOOK_PAGE_ID, '101090861674291', 'find_page_id_%3A_101090861674291'];
     yield [Find::FACEBOOK_POST_ID, '101090861674291_101098335006877', 'find_post_id_%3A_101090861674291_101098335006877'];
 
