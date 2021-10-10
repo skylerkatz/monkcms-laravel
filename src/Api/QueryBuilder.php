@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Auth\AuthenticationException;
 use Symfony\Component\HttpFoundation\Response;
+use Monkdev\MonkCms\Exceptions\QueryBuilderException;
 use Monkdev\MonkCms\Exceptions\SiteNotFoundException;
 use Monkdev\MonkCms\Exceptions\UnprocessableApiResponseException;
 
@@ -40,19 +41,7 @@ class QueryBuilder
      */
     public function find(?string $type = null, string | array $value = ''): array
     {
-        $values = is_string($value) ? explode(',', $value) : $value;
-
-        if (! $type) {
-            return $this->finds;
-        }
-
-        if ($this->shouldBeSluggified($type)) {
-            $values = array_map(fn ($value) => Str::slug($value), $values);
-        }
-
-        $this->finds[$type] = implode(',', $values);
-
-        return $this->finds;
+        return $this->filter(Find::class, $type, $value);
     }
 
     /**
@@ -62,19 +51,36 @@ class QueryBuilder
      */
     public function hide(?string $type = null, string | array $value = ''): array
     {
-        $values = is_string($value) ? explode(',', $value) : $value;
+        return $this->filter(Hide::class, $type, $value);
+    }
+
+    /**
+     * @param string $filter
+     * @param string|null $type
+     * @param string|array<int, string> $value
+     * @return array<string, string>
+     */
+    protected function filter(string $filter, ?string $type = null, string | array $value = ''): array
+    {
+        if (! in_array($filter, [Hide::class, Find::class])) {
+            throw new QueryBuilderException("Invalid Filter Type $filter");
+        }
+
+        $filter = Str::plural(strtolower(class_basename($filter)));
 
         if (! $type) {
-            return $this->hides;
+            return $this->$filter;
         }
+
+        $values = is_string($value) ? explode(',', $value) : $value;
 
         if ($this->shouldBeSluggified($type)) {
             $values = array_map(fn ($value) => Str::slug($value), $values);
         }
 
-        $this->hides[$type] = implode(',', $values);
+        $this->$filter[$type] = implode(',', $values);
 
-        return $this->hides;
+        return $this->$filter;
     }
 
     public function module(?string $module = null): ?string
