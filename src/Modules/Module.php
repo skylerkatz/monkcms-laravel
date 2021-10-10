@@ -21,9 +21,9 @@ abstract class Module
      * @param array<string, string> $response
      * @return static
      */
-    protected static function fromResponse(array $response) :static
+    protected static function fromResponse(array $response): static
     {
-        $model = new static;
+        $model = new static();
         $model->setResponse($response);
 
         return $model;

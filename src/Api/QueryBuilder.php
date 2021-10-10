@@ -147,7 +147,7 @@ class QueryBuilder
     /**
      * @return array<string, string>
      */
-    protected function processResponse(string $response) : array
+    protected function processResponse(string $response): array
     {
         try {
             return json_decode(substr($response, 10), true, 512, JSON_THROW_ON_ERROR);

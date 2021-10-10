@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
+
+/** @noinspection PhpUnhandledExceptionInspection */
 
 use Illuminate\Support\Facades\Http;
 use Monkdev\MonkCms\Api\QueryBuilder;
