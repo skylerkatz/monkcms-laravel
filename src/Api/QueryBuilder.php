@@ -21,6 +21,11 @@ class QueryBuilder
      */
     private array $finds = [];
 
+    /**
+     * @var array<string, string>
+     */
+    private array $hides = [];
+
     private ?string $module = null;
 
     public function get(): static
@@ -48,6 +53,28 @@ class QueryBuilder
         $this->finds[$type] = implode(',', $values);
 
         return $this->finds;
+    }
+
+    /**
+     * @param string|null $type
+     * @param string|array<int, string> $value
+     * @return array<string, string>
+     */
+    public function hide(?string $type = null, string | array $value = ''): array
+    {
+        $values = is_string($value) ? explode(',', $value) : $value;
+
+        if (! $type) {
+            return $this->hides;
+        }
+
+        if ($this->shouldBeSluggified($type)) {
+            $values = array_map(fn ($value) => Str::slug($value), $values);
+        }
+
+        $this->hides[$type] = implode(',', $values);
+
+        return $this->hides;
     }
 
     public function module(?string $module = null): ?string
@@ -80,6 +107,10 @@ class QueryBuilder
         ]);
 
         foreach ($this->find() as $type => $value) {
+            $query[$type] = $value;
+        }
+
+        foreach ($this->hide() as $type => $value) {
             $query[$type] = $value;
         }
 
@@ -183,6 +214,6 @@ class QueryBuilder
 
     protected function shouldBeSluggified(string $type): bool
     {
-        return in_array($type, Find::sluggableFinds(), true);
+        return in_array($type, array_merge(Find::sluggableFinds(), Hide::sluggableHides()), true);
     }
 }
