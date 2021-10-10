@@ -71,6 +71,8 @@ class Find
 
     public const FREQUENCY = 'find_frequency';
 
+    public const SMALL_GROUP_STATUS = 'find_status';
+
     public const FACEBOOK_PAGE_ID = 'find_page_id';
     public const FACEBOOK_POST_ID = 'find_post_id';
 
@@ -104,6 +106,7 @@ class Find
             self::SIMILAR_PRODUCTS,
             self::MODULE,
             self::FREQUENCY,
+            self::SMALL_GROUP_STATUS,
         ];
     }
 }
