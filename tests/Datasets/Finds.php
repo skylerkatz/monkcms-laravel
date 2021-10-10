@@ -61,7 +61,7 @@ dataset('finds', function () {
     yield [Find::BOOK_LIST, 'recommended-reading', 'find_booklist_%3A_recommended-reading'];
 
     yield [Find::BOOK, "Oh the Places You'll Go", 'find_book_%3A_oh-the-places-youll-go'];
-    yield [Find::BOOK, "oh-the-places-youll-go", 'find_book_%3A_oh-the-places-youll-go'];
+    yield [Find::BOOK, 'oh-the-places-youll-go', 'find_book_%3A_oh-the-places-youll-go'];
 
     yield [Find::LOCATION, 'The Sanctuary', 'find_location_%3A_the-sanctuary'];
     yield [Find::LOCATION, 'the-sanctuary', 'find_location_%3A_the-sanctuary'];

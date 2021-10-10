@@ -38,7 +38,7 @@ it('can generate a full api url', function () {
     Config::set('monkcms.api_url', 'https://monkcms.api');
 
     $expectedUrl = sprintf(
-        "https://monkcms.api/Clients/ekkContent.php?%s",
+        'https://monkcms.api/Clients/ekkContent.php?%s',
         invokeProtected($queryBuilder, 'buildQueryString')
     );
 

@@ -140,7 +140,7 @@ class QueryBuilder
     protected function buildRequestUrl(): string
     {
         return sprintf(
-            "%s/Clients/ekkContent.php?%s",
+            '%s/Clients/ekkContent.php?%s',
             Config::get('monkcms.api_url'),
             $this->buildQueryString()
         );
@@ -213,7 +213,7 @@ class QueryBuilder
                     return $key;
                 }
 
-                return sprintf("%s_:_%s", $key, $value);
+                return sprintf('%s_:_%s', $key, $value);
             })
             ->values()
             ->mapWithKeys(fn ($value, $key) => ["arg$key" => $value])

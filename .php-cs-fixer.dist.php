@@ -39,5 +39,6 @@ return (new PhpCsFixer\Config())
         'single_trait_insert_per_statement' => true,
         'use_arrow_functions' => true,
         'declare_strict_types' => true,
+        'single_quote' => true,
     ])
     ->setFinder($finder);
