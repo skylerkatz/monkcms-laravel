@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Monkdev\MonkCms;
 
 use Spatie\LaravelPackageTools\Package;

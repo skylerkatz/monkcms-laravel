@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Monkdev\MonkCms\Traits;
 
 use BadMethodCallException;
@@ -21,7 +23,7 @@ trait UsesGetContentQueryBuilder
      */
     public static function __callStatic(string $method, array $parameters): static
     {
-        return (new static)->$method(...$parameters);
+        return (new static())->$method(...$parameters);
     }
 
     /**

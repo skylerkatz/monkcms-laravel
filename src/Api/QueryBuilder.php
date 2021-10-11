@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Monkdev\MonkCms\Api;
 
 use Throwable;
@@ -10,6 +12,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Auth\AuthenticationException;
 use Symfony\Component\HttpFoundation\Response;
+use Monkdev\MonkCms\Exceptions\QueryBuilderException;
 use Monkdev\MonkCms\Exceptions\SiteNotFoundException;
 use Monkdev\MonkCms\Exceptions\UnprocessableApiResponseException;
 
@@ -40,19 +43,7 @@ class QueryBuilder
      */
     public function find(?string $type = null, string | array $value = ''): array
     {
-        $values = is_string($value) ? explode(',', $value) : $value;
-
-        if (! $type) {
-            return $this->finds;
-        }
-
-        if ($this->shouldBeSluggified($type)) {
-            $values = array_map(fn ($value) => Str::slug($value), $values);
-        }
-
-        $this->finds[$type] = implode(',', $values);
-
-        return $this->finds;
+        return $this->filter(Find::class, $type, $value);
     }
 
     /**
@@ -62,19 +53,36 @@ class QueryBuilder
      */
     public function hide(?string $type = null, string | array $value = ''): array
     {
-        $values = is_string($value) ? explode(',', $value) : $value;
+        return $this->filter(Hide::class, $type, $value);
+    }
+
+    /**
+     * @param string $filter
+     * @param string|null $type
+     * @param string|array<int, string> $value
+     * @return array<string, string>
+     */
+    protected function filter(string $filter, ?string $type = null, string | array $value = ''): array
+    {
+        if (! in_array($filter, [Hide::class, Find::class])) {
+            throw new QueryBuilderException("Invalid Filter Type $filter");
+        }
+
+        $filter = Str::plural(strtolower(class_basename($filter)));
 
         if (! $type) {
-            return $this->hides;
+            return $this->$filter;
         }
+
+        $values = is_string($value) ? explode(',', $value) : $value;
 
         if ($this->shouldBeSluggified($type)) {
             $values = array_map(fn ($value) => Str::slug($value), $values);
         }
 
-        $this->hides[$type] = implode(',', $values);
+        $this->$filter[$type] = implode(',', $values);
 
-        return $this->hides;
+        return $this->$filter;
     }
 
     public function module(?string $module = null): ?string
@@ -132,7 +140,7 @@ class QueryBuilder
     protected function buildRequestUrl(): string
     {
         return sprintf(
-            "%s/Clients/ekkContent.php?%s",
+            '%s/Clients/ekkContent.php?%s',
             Config::get('monkcms.api_url'),
             $this->buildQueryString()
         );
@@ -141,7 +149,7 @@ class QueryBuilder
     /**
      * @return array<string, string>
      */
-    protected function processResponse(string $response) : array
+    protected function processResponse(string $response): array
     {
         try {
             return json_decode(substr($response, 10), true, 512, JSON_THROW_ON_ERROR);
@@ -205,7 +213,7 @@ class QueryBuilder
                     return $key;
                 }
 
-                return sprintf("%s_:_%s", $key, $value);
+                return sprintf('%s_:_%s', $key, $value);
             })
             ->values()
             ->mapWithKeys(fn ($value, $key) => ["arg$key" => $value])

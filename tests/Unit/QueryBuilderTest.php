@@ -1,4 +1,8 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
+
+declare(strict_types=1);
+
+/** @noinspection PhpUnhandledExceptionInspection */
 
 use Illuminate\Support\Facades\Http;
 use Monkdev\MonkCms\Api\QueryBuilder;
@@ -34,7 +38,7 @@ it('can generate a full api url', function () {
     Config::set('monkcms.api_url', 'https://monkcms.api');
 
     $expectedUrl = sprintf(
-        "https://monkcms.api/Clients/ekkContent.php?%s",
+        'https://monkcms.api/Clients/ekkContent.php?%s',
         invokeProtected($queryBuilder, 'buildQueryString')
     );
 
@@ -127,3 +131,17 @@ it('throws an exception if the response is bad', function () {
     UnprocessableApiResponseException::class,
     'The api response was unable to be processed: 0'
 );
+
+it('finds by types with values', function ($type, $value, $result) {
+    $queryBuilder = new QueryBuilder();
+    $queryBuilder->find($type, $value);
+
+    expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain($result);
+})->with('finds');
+
+it('hides by types with values', function ($type, $value, $result) {
+    $queryBuilder = new QueryBuilder();
+    $queryBuilder->hide($type, $value);
+
+    expect(invokeProtected($queryBuilder, 'buildQueryString'))->toContain($result);
+})->with('hides');

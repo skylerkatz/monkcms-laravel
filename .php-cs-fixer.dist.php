@@ -13,6 +13,7 @@ $finder = Symfony\Component\Finder\Finder::create()
 return (new PhpCsFixer\Config())
     ->setRules([
         '@PSR2' => true,
+        '@PSR12' => true,
         'array_syntax' => ['syntax' => 'short'],
         'ordered_imports' => ['sort_algorithm' => 'length'],
         'no_unused_imports' => true,
@@ -36,5 +37,12 @@ return (new PhpCsFixer\Config())
             'keep_multiple_spaces_after_comma' => true,
         ],
         'single_trait_insert_per_statement' => true,
+        'use_arrow_functions' => true,
+        'declare_strict_types' => true,
+        'modernize_strpos' => true,
+        'modernize_types_casting' => true,
+        'no_superfluous_elseif' => true,
+        'no_useless_else' => true,
+        'single_quote' => true,
     ])
     ->setFinder($finder);
